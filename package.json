@@ -4,7 +4,7 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start": "webpack -w & nodemon app.js",
+    "start": "webpack -w & nodemon ./src/server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
     "express": "^4.14.0",
     "express-session": "^1.14.2",
     "firebase": "^3.6.7",
+    "json-loader": "^0.5.4",
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "react": "^15.4.1",
