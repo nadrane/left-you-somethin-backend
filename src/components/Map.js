@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BackgroundGeolocation from 'react-native-background-geolocation';
+// import BackgroundGeolocation from 'react-native-background-geolocation';
 import MapView from 'react-native-maps';
 
 export default class Map extends Component {
