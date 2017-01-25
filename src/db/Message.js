@@ -1,35 +1,32 @@
-var Sequelize = require('sequelize');
-var db = require('./db');
+const Sequelize = require('sequelize');
+const db = require('./db');
 
-var messageSchema = {
+const messageSchema = {
     goHereImage: {
         type: Sequelize.STRING,
-        allowNull: false
+
     },
     goHereText: {
         type: Sequelize.STRING,
-        allowNull: false
+
     },
     latitude: {
         type: Sequelize.DECIMAL,
-        allowNull: false
+
     },
     longitude: {
         type: Sequelize.DECIMAL,
-        allowNull: false
+
     },
     payload: {
         type: Sequelize.STRING,
-        allowNull: false
+
     },
 };
 
-
-var messageConfig = {};
+const messageConfig = {};
 
 const Message = db.define('message', messageSchema, messageConfig);
-
-
 
 
 module.exports = Message;
