@@ -2,10 +2,13 @@
   "name": "LeftYouSomethin",
   "version": "0.0.1",
   "private": true,
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "webpack -w & nodemon ./src/server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "check-node-version --node '>= 6.7.0' && bin/setup && webpack",
+    "build-watch": "check-node-version --node '>= 6.7.0' && bin/setup && webpack -w",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node --harmony ./seed.js"
   },
   "keywords": [],
   "author": "",
