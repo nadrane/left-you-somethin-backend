@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
-const db = new Sequelize('postgres://localhost:1333/leftyousomethin', {
+
+const db = new Sequelize('postgres://localhost:5432/leftyousomethin', {
     logging: false
 });
 

@@ -15,7 +15,14 @@ app.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname, '../index.html'))
 });
 
-app.listen(1333);
+db.sync()
+    .then(function(){
+      app.listen(1333);
+        console.log('Server is listening on port 1333');
+
+    })
+    .catch(console.error);
+
 
 module.exports = app;
 
