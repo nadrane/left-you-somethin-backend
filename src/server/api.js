@@ -2,8 +2,7 @@ const api = require('express').Router();
 
 api
   .use('/user', require('./user'))
-
-  .use('/messages', require('./messages'))
+  .use('/message', require('./message'))
 
 // Send along any errors
 api.use((err, req, res, next) => {
@@ -13,5 +12,5 @@ api.use((err, req, res, next) => {
 
 api.use((req, res) => res.status(404).end());
 
-module.exports = api
+module.exports = api;
 
