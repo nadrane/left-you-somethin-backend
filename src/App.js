@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
+
 // import { Provider } from 'react-redux';
 // import { createStore, applyMiddleware } from 'redux';
 import firebase from 'firebase';
@@ -47,4 +48,3 @@ export default class App extends Component {
     );
   }
 }
-
