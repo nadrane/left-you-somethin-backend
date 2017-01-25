@@ -65,16 +65,17 @@ export default class LocationDisplay extends Component {
   }
 
   render() {
+    const position = this.state.currentPosition;
     return (
       <View>
         <MapView
-          style={{height: 200, margin: 40}}
+          style={{height: 400, width: 300, margin: 0}}
           showsUserLocation={true}
         />
         <Text style={styles.title}>Current position: </Text>
-        <Text> X: {this.state.currentPosition.coords.latitude} </Text>
-        <Text> Y: {this.state.currentPosition.coords.longitude} </Text>
-        <Text> Timestamp: {this.state.currentPosition.timestamp} </Text>
+        <Text> X: {position.coords.latitude} </Text>
+        <Text> Y: {position.coords.longitude} </Text>
+        <Text> Timestamp: {position.timestamp} </Text>
         {this.renderButton()}
       </View>
     );
