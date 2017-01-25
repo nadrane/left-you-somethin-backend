@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, MapView } from 'react-native';
 import { Button, Spinner } from './common';
 
 export default class LocationDisplay extends Component {
@@ -67,6 +67,10 @@ export default class LocationDisplay extends Component {
   render() {
     return (
       <View>
+        <MapView
+          style={{height: 200, margin: 40}}
+          showsUserLocation={true}
+        />
         <Text style={styles.title}>Current position: </Text>
         <Text> X: {this.state.currentPosition.coords.latitude} </Text>
         <Text> Y: {this.state.currentPosition.coords.longitude} </Text>
