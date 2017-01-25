@@ -1,0 +1,17 @@
+{
+    "extends": "airbnb",
+    "installedESLint": true,
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
+    "rules": {
+      "comma-dangle": 0,
+      "import/no-extraneous-dependencies": 1,
+      "no-param-reassign": 1,
+      "quotes": 1,
+      "react/require-default-props": 0,
+      "no-use-before-define": 0
+    }
+}
