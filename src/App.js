@@ -6,8 +6,30 @@ import { Text, View, StyleSheet } from 'react-native';
 import firebase from 'firebase';
 // import ReduxThunk from 'redux-thunk';
 
-// import Router from './Router';
+// import Map from './components/Map';
 // import reducers from './reducers';
+
+export default class App extends Component {
+  componentDidMount() {
+    const config = {
+      apiKey: 'AIzaSyCafc-bsxSIrF0CT1YiEfseFNMHfg6k1MQ',
+      authDomain: 'left-you-somethin.firebaseapp.com',
+      databaseURL: 'https://left-you-somethin.firebaseio.com',
+      storageBucket: 'left-you-somethin.appspot.com',
+      messagingSenderId: '273359995006'
+    };
+    firebase.initializeApp(config);
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>Hello world!</Text>
+
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -27,24 +49,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
-export default class App extends Component {
-  componentDidMount() {
-    const config = {
-      apiKey: 'AIzaSyCafc-bsxSIrF0CT1YiEfseFNMHfg6k1MQ',
-      authDomain: 'left-you-somethin.firebaseapp.com',
-      databaseURL: 'https://left-you-somethin.firebaseio.com',
-      storageBucket: 'left-you-somethin.appspot.com',
-      messagingSenderId: '273359995006'
-    };
-    firebase.initializeApp(config);
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-         <Text style={styles.welcome}>Hello world!</Text>
-      </View>
-    );
-  }
-}
