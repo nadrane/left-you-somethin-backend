@@ -15,7 +15,13 @@ app.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname, '../index.html'))
 });
 
-app.listen(1333);
+db.sync()
+.then( () => {
+  app.listen(1333)
+})
+.catch( err => {
+  console.log('Error', err)
+})
 
 module.exports = app;
 

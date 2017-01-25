@@ -27392,6 +27392,14 @@
 	
 	
 	
+	}).
+	get('/:user',function(req,res,next){
+	res.send('Got Single User').
+	catch(next);
+	}).
+	delete('/:user',function(req,res,next){
+	res.send('delete this user').
+	catch(next);
 	});
 
 /***/ },
@@ -27410,6 +27418,14 @@
 	
 	
 	
+	}).
+	get('/:message',function(req,res,next){
+	res.send('Got Single Message').
+	catch(next);
+	}).
+	delete('/:message',function(req,res,next){
+	res.send('Delete this message').
+	catch(next);
 	});
 
 /***/ }

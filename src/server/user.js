@@ -10,5 +10,13 @@ module.exports = router
     //   res.json(users)
     // })
     // .catch(next)
+  })
+  .get('/:user', (req, res, next) => {
+    res.send('Got Single User')
+    .catch(next);
+  })
+  .delete('/:user', (req, res, next) => {
+    res.send('delete this user')
+    .catch(next);
   });
 

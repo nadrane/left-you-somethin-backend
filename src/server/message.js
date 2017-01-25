@@ -10,5 +10,13 @@ module.exports = router
     //   res.json(msgs)
     // })
     // .catch(next)
+  })
+  .get('/:message', (req, res, next) => {
+    res.send('Got Single Message')
+    .catch(next);
+  })
+  .delete('/:message', (req, res, next) => {
+    res.send('Delete this message')
+    .catch(next);
   });
 
