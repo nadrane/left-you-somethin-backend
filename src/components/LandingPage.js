@@ -69,8 +69,9 @@ export default class LocationDisplay extends Component {
     return (
       <View>
         <MapView
-          style={{height: 400, width: 300, margin: 0}}
+          style={{height: 400, width: 400, margin: 0}}
           showsUserLocation={true}
+          region={{latitude: position.coords.latitude, longitude: position.coords.longitude, latitudeDelta: .01, longitudeDelta: .01}} 
         />
         <Text style={styles.title}>Current position: </Text>
         <Text> X: {position.coords.latitude} </Text>
