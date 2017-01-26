@@ -2,7 +2,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/server/api.js',
+  entry: './server/api.js',
   target: 'node',
   output: {
     path: __dirname,
