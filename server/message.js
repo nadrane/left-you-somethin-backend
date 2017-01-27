@@ -1,14 +1,16 @@
-// const Message = require('../db/Message.js');
+const { Message } = require('../db/index.js');
 const router = require('express').Router();
 
-module.exports = router
-  .get('/', (req, res, next) => {
+  router.get('/', (req, res, next) => {
     res.send('Hit Messages Page')
-    .catch(next);
-    // Message.findAll()
-    // .then( msgs => {
-    //   res.json(msgs)
-    // })
-    // .catch(next)
   });
 
+    router.post('/', (req, res, next) => {
+        console.log('here is req.body inside of message api router', req.body);
+        Message.create({
+          goHereText: req.body.goHereText
+        })
+            .then(message => res.send(message));
+    });
+
+module.exports = router;
