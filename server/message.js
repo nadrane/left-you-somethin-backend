@@ -8,7 +8,9 @@ const router = require('express').Router();
     router.post('/', (req, res, next) => {
         console.log('here is req.body inside of message api router', req.body);
         Message.create({
-          goHereText: req.body.goHereText
+          goHereText: req.body.goHereText,
+          latitude: req.body.latitude,
+          longitude: req.body.longitude
         })
             .then(message => res.send(message));
     });
