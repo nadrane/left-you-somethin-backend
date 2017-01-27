@@ -48,7 +48,7 @@
 	
 	api.
 	use('/user',__webpack_require__(95)).
-	use('/message',__webpack_require__(96));
+	use('/egg',__webpack_require__(96));
 	
 	
 	api.use(function(err,req,res,next){
@@ -27398,16 +27398,15 @@
 /* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _require=__webpack_require__(97),Message=_require.Message;
+	'use strict';var _require=__webpack_require__(97),Egg=_require.Egg;
 	var router=__webpack_require__(1).Router();
 	
 	router.get('/',function(req,res,next){
-	res.send('Hit Messages Page');
+	res.send('Hit Eggs Page');
 	});
 	
 	router.post('/',function(req,res,next){
-	console.log('here is req.body inside of message api router',req.body);
-	Message.create({
+	Egg.create({
 	goHereText:req.body.goHereText,
 	latitude:req.body.latitude,
 	longitude:req.body.longitude}).
@@ -27424,15 +27423,15 @@
 	'use strict';
 	
 	var User=__webpack_require__(98);
-	var Message=__webpack_require__(447);
+	var Egg=__webpack_require__(447);
 	
 	
-	Message.belongsTo(User,{as:'sender'});
-	Message.belongsTo(User,{as:'receiver'});
+	Egg.belongsTo(User,{as:'sender'});
+	Egg.belongsTo(User,{as:'receiver'});
 	
 	
 	module.exports={
-	User:User,Message:Message};
+	User:User,Egg:Egg};
 
 /***/ },
 /* 98 */
@@ -105331,7 +105330,7 @@
 	'use strict';var Sequelize=__webpack_require__(99);
 	var db=__webpack_require__(446);
 	
-	var messageSchema={
+	var eggSchema={
 	goHereImage:{
 	type:Sequelize.STRING},
 	
@@ -105354,12 +105353,12 @@
 	
 	
 	
-	var messageConfig={};
+	var eggConfig={};
 	
-	var Message=db.define('message',messageSchema,messageConfig);
+	var Egg=db.define('egg',eggSchema,eggConfig);
 	
 	
-	module.exports=Message;
+	module.exports=Egg;
 
 /***/ }
 /******/ ]);
