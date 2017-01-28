@@ -27405,13 +27405,18 @@
 	res.send('Hit Eggs Page');
 	});
 	
+	router.get('/:id',function(req,res,next){
+	Egg.findOne({where:{id:req.params.id}}).
+	then(function(egg){return res.send(egg);});
+	});
+	
 	router.post('/',function(req,res,next){
 	Egg.create({
 	goHereText:req.body.goHereText,
 	latitude:req.body.latitude,
 	longitude:req.body.longitude}).
 	
-	then(function(message){return res.send(message);});
+	then(function(egg){return res.send(egg);});
 	});
 	
 	module.exports=router;

@@ -5,13 +5,18 @@ const router = require('express').Router();
     res.send('Hit Eggs Page')
   });
 
+  router.get('/:id', (req, res, next) => {
+    Egg.findOne({where: {id: req.params.id}})
+    .then(egg => res.send(egg))
+  });
+
     router.post('/', (req, res, next) => {
         Egg.create({
           goHereText: req.body.goHereText,
           latitude: req.body.latitude,
           longitude: req.body.longitude
         })
-            .then(message => res.send(message));
+            .then(egg => res.send(egg));
     });
 
 module.exports = router;
