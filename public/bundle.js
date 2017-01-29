@@ -27413,6 +27413,7 @@
 	router.post('/',function(req,res,next){
 	Egg.create({
 	goHereText:req.body.goHereText,
+	payloadType:req.body.payloadType,
 	latitude:req.body.latitude,
 	longitude:req.body.longitude}).
 	
@@ -105353,8 +105354,12 @@
 	
 	
 	payload:{
-	type:Sequelize.STRING}};
+	type:Sequelize.STRING},
 	
+	
+	payloadType:{
+	type:Sequelize.ENUM('Text','Audio','Video'),
+	allowNull:false}};
 	
 	
 	

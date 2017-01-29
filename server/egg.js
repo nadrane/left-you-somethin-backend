@@ -13,6 +13,7 @@ const router = require('express').Router();
     router.post('/', (req, res, next) => {
         Egg.create({
           goHereText: req.body.goHereText,
+          payloadType: req.body.payloadType,
           latitude: req.body.latitude,
           longitude: req.body.longitude
         })
