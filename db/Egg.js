@@ -24,6 +24,7 @@ const eggSchema = {
     },
     payloadType: {
         type: Sequelize.ENUM('Text', 'Audio', 'Video'),
+        defaultValue: 'Text',
         allowNull: false
     }
 };
