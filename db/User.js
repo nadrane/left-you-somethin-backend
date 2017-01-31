@@ -1,6 +1,9 @@
 const Sequelize = require('sequelize');
 const db = require('./db')
 
+
+// Be explicit about nulls again.
+// What about password hashes?
 const userSchema={
     name: {
         type: Sequelize.STRING
